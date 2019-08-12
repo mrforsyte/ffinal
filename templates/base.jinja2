@@ -4,8 +4,12 @@
 	<title>this is a base page</title>
 </head>
 <body>
+
+<a href=" {{ url_for('hello') }}"> Home </a>
 {% block content %}
 
 {% endblock %}
+
+<a href=" {{ url_for('create') }}"> New Post </a>
 </body>
 </html>

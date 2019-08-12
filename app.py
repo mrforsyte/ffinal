@@ -9,6 +9,10 @@ posts = {
 	}
 }
 
+@app.route('/home')
+def home1():
+	return render_template('home.jinja2', posts = posts)
+
 @app.route('/')
 def hello():
 	return 'little bitch'
@@ -22,14 +26,11 @@ def home(post_id):
 	
 	return render_template('index.html', post = post)
 
-@app.route('/createpost')	
-def create_post():
-	return render_template('create_form.jinja2')
 	
 
 @app.route('/post/create', methods=['GET','POST'])
 def create():
-	if request.methods == 'POST':
+	if request.method == 'POST':
 
 		title = request.form.get('title')
 		year = request.form.get('year of production')
